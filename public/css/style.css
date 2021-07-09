@@ -4,6 +4,7 @@
     font-family: 'Poiret One', cursive;
     font-weight: bold;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 html{
@@ -57,4 +58,33 @@ li a{
 .date.new_date{
     background:  rgb(16, 235, 235);
     font-size: 1.5rem;
+}
+
+.img_content_box{
+    overflow: hidden;
+    
+}
+
+ .img_box img{
+    transform: scale(1.4);
+    transition: transform 1s linear;
+}
+
+.img_content_box:hover .img_box img{
+    transform: scale(1);
+    /* transition: transform 1s linear; */
+}
+
+.content_box{
+    background: rgba(0, 0, 0, 0.541);
+    color: white;
+    padding: 1rem;
+    /* visibility: hidden; */
+    transform: scale(0) translate(-50%);
+}
+
+.img_content_box:hover .content_box{
+    /* visibility: hidden; */
+    transform: scale(1) translate(0%);
+    transition: transform 1s linear;
 }
