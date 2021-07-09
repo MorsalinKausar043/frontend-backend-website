@@ -28,4 +28,8 @@ app.get("/about", (req, res) => {
     res.status(201).render("about")
 });
 
+app.get("/gallery", (req, res) => {
+    res.status(201).render("gallery")
+});
+
 app.listen(port , ()=> console.log(`express server is ${port}`))

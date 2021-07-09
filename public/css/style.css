@@ -3,8 +3,58 @@
 *{
     font-family: 'Poiret One', cursive;
     font-weight: bold;
+    scroll-behavior: smooth;
 }
 
 html{
     font-size: 62.5%;
+}
+
+li a{
+    color: black !important;
+    margin-right: 2rem !important;
+}
+
+.navbar-brand {
+    color: black ;
+    font-weight: 700;
+    font-size: 2rem !important;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    padding: .5rem 2rem ;
+    margin-left: 50%;
+    font-size: 1.5rem;
+}
+
+.calander{
+    display: grid;
+    grid-template-columns:  repeat(7 ,1fr);
+    grid-template-rows: 3.5rem repeat(5, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.calander .date , .calander .day
+{
+    background: rgba(19, 108, 209, 0.836);
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: .5rem;
+}
+
+.calander .day{
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    padding: 0;
+    font-weight: 700;
+    background: rgb(223, 25, 58);
+    color: white;
+}
+
+.date.new_date{
+    background:  rgb(16, 235, 235);
+    font-size: 1.5rem;
 }
