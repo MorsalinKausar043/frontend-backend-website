@@ -32,4 +32,9 @@ app.get("/gallery", (req, res) => {
     res.status(201).render("gallery")
 });
 
+app.get("/calender", (req, res) => {
+    res.status(201).render("calender")
+});
+
+
 app.listen(port , ()=> console.log(`express server is ${port}`))

@@ -88,3 +88,8 @@ li a{
     transform: scale(1) translate(0%);
     transition: transform 1s linear;
 }
+
+button{
+    font-size: 1.4rem !important;
+    color: white !important;
+}
