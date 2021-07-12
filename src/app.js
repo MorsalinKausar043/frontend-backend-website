@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require("path");
 const hbs = require('hbs');
-const { expr } = require("jquery");
-require('./db/db')
+const User = require('./models/conn')
+require('./db/db');
 const app = express();
 const port = process.env.PORT || 8000;
 
@@ -15,6 +15,7 @@ const partialspath = path.join(__dirname, "../templates/partials");
 app.use("/css", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
 app.use("/js", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js")));
 app.use("/jq", express.static(path.join(__dirname, "../node_modules/jquery/dist")));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(staticpath));
 app.set("view engine", "hbs");
 app.set("views", templatespath)
@@ -35,6 +36,29 @@ app.get("/gallery", (req, res) => {
 app.get("/calender", (req, res) => {
     res.status(201).render("calender")
 });
+
+app.get("/contact", (req, res) => {
+    res.status(201).render("contact")
+});
+
+app.post("/contact", async (req,res) => {
+    try {
+        const Userdata = new User(req.body);
+        await Userdata.save();
+        res.status(201).render('index');
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
+app.get("/contact-api", async (req,res) => {
+    try {
+        const result = await User.find({});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
 
 
 app.listen(port , ()=> console.log(`express server is ${port}`))
