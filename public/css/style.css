@@ -93,3 +93,8 @@ button{
     font-size: 1.4rem !important;
     color: white !important;
 }
+
+.about_title_para{
+    color: rgb(208, 14, 214);
+    font-size: 1.5rem;
+}
